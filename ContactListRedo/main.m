@@ -33,12 +33,14 @@ int main(int argc, const char * argv[]) {
                 NSString *name = [inputCollector inputForPrompt:@"Enter Contact Name:"];
                 NSString *number = [inputCollector inputForPrompt:@"Enter Contact Number:"]; 
                 NSString *location = [inputCollector inputForPrompt:@"Enter Contact Location:"];
+                
                 newContact.name = name;
                 newContact.number = number;
                 newContact.location = location;
                 
                 [listOfContacts addContact:newContact];
-                
+                NSInteger indexNum = [listOfContacts.listOfContacts indexOfObject:newContact];
+
 
                 
                 NSLog(@"Contact Stored");
@@ -48,7 +50,9 @@ int main(int argc, const char * argv[]) {
             
             else if ([menu isEqualToString:@"view"]) {
                 for (Contact *contacts in listOfContacts.listOfContacts)
-                    NSLog(@"# %d : %@", contacts.number, contacts.name);
+                    NSLog(@"# %d : %@", contacts.indexNum, contacts.name);
+                
+                [inputCollector inputForPrompt:@"To show contact details, select index"];
                 
             }
             

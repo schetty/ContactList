@@ -13,6 +13,7 @@
 @property NSString *name;
 @property int number;
 @property NSString *location;
+@property NSInteger *indexNum;
 
 
 
